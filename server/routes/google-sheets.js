@@ -9,9 +9,9 @@ router.get("/", googleCtrl.index);
 router.post("/create", googleCtrl.create);
 
 //update row in google sheet
-router.put("/update", googleCtrl.update);
+router.post("/update", googleCtrl.update);
 
 //delete row in google sheet
-router.delete("/delete", googleCtrl.delete);
+router.post("/delete", googleCtrl.delete);
 
 module.exports = router;

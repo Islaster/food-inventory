@@ -32,7 +32,7 @@ export default function CreatePage() {
     axios
       .post("http://localhost:3001/create", array)
       .catch((error) => console.error("Error:", error));
-    navi("/inventory");
+    navi("/");
   }
   return (
     <form action="" onSubmit={handleSubmit} className="professional-form">

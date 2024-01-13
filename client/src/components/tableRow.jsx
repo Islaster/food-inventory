@@ -23,11 +23,14 @@ export default function TableRow({ item, index }) {
   });
 
   function handleSubmit(evt) {
+    evt.preventDefault();
     axios
       .post("http://localhost:3001/update", data)
+      .then(data=>console.log(data))
       .catch((error) => console.error("Error:", error));
     setEdit(!edit);
   }
+  console.log(item)
   return (
     <form className={`row ${index}`} key={index} onSubmit={handleSubmit}>
       {item.map((cell, cIndex) =>
@@ -39,12 +42,18 @@ export default function TableRow({ item, index }) {
       )}
       <>
         <div className="cell">
-          <MdEdit
+          { !edit?
+            <MdEdit
             onClick={(event) => {
               setEdit(!edit);
               setRowIndex(index);
             }}
-          />
+            />:
+            <>
+            <button className="editButton" type="submit">edit</button>
+            <button className="cancelButton" onClick={() => setEdit(!edit)}>cancel</button>
+            </>
+          }
         </div>
         <div
           className="cell"

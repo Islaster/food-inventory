@@ -11,6 +11,7 @@ const sheets = google.sheets({ version: "v4", auth });
 // ID of your Google Sheet
 const SPREADSHEETID = process.env.SPREADSHEETID;
 const doc = new GoogleSpreadsheet(SPREADSHEETID, auth);
+require("dotenv").config();
 doc.loadInfo();
 
 async function index(req, res){
