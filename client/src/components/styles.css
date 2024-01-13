@@ -1,0 +1,67 @@
+@media screen and (max-width: 600px) {
+  .cell {
+    width: 100%;
+    display: block;
+  }
+
+  .editButton {
+    font-size: 3.5vw; /* Slightly larger font size for better readability on small screens */
+    padding: 2vh 4vw; /* Adjusted padding for small screens */
+  }
+
+  .cancelButton {
+    font-size: 3.5vw; /* Slightly larger font size for better readability on small screens */
+    padding: 2vh 4vw; /* Adjusted padding for small screens */
+  }
+}
+
+/* Alternating row colors */
+.row:nth-child(odd) {
+  background-color: #fff; /* White for odd rows */
+}
+
+.row:nth-child(even) {
+  background-color: #f9f9f9; /* Lighter gray for even rows */
+}
+
+.row {
+  /* Additional styling for rows can go here */
+  display: table-row;
+}
+
+.cell {
+  border: 1px solid #ccc;
+  text-align: left;
+  padding: 8px;
+  display: table-cell;
+}
+
+.editButton {
+  background-color: #17a2b8; /* Bootstrap's info blue */
+  color: white;
+  padding: 0.2vh 0.4vw;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.cancelButton {
+  background-color: #dc3545; /* A professional, muted red */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 0.2vh 0.4vw;
+}
+
+.cancelButton:hover,
+.cancelButton:focus {
+  background-color: #c82333; /* A slightly darker shade for hover effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Slightly larger shadow on hover */
+}
+
+.editButton:hover,
+.editButton:focus {
+  background-color: #138496; /* A slightly darker shade for hover effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Slightly larger shadow on hover */
+}

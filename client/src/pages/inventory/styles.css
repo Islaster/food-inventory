@@ -1,0 +1,72 @@
+* {
+  margin: 0; /* Ensures there is no default margin */
+  padding: 0; /* Ensures there is no default padding */
+}
+body {
+  position: relative;
+}
+
+.addButton {
+  position: absolute;
+  top: -8.5vh; /* Half of the top margin of the table */
+  left: 4vw; /* All the way to the left */
+  padding: 0.5vh 1vw; /* Responsive padding */
+  background-color: #28a745; /* Professional green shade */
+  color: white; /* Text color */
+  border: none; /* No border */
+  border-radius: 5px; /* Slightly rounded corners */
+  font-size: 1.2vw; /* Responsive font size */
+  font-family: Arial, sans-serif; /* Clean, professional font */
+  text-align: center; /* Center text inside the button */
+  cursor: pointer; /* Pointer cursor on hover */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+}
+
+.addButton:hover,
+.addButton:focus {
+  background-color: #218838; /* A darker green shade on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Slightly larger shadow on hover */
+}
+
+.table {
+  width: calc(100% - 100px); /* Adjust width to account for side margins */
+  max-width: calc(
+    100vw - 100px
+  ); /* Ensures the table doesn't exceed the viewport width minus margins */
+  border-collapse: collapse;
+  margin: 91px auto 30px; /* 91px top, auto horizontal, 30px bottom margins */
+  overflow-x: auto; /* Enables horizontal scrolling if needed */
+  box-sizing: border-box; /* Includes padding and borders in the element's width */
+  font-family: "Arial", sans-serif; /* Spreadsheet-like font */
+  border: 1px solid #ccc; /* Border around the table */
+  display: table;
+}
+
+.row {
+  /* Additional styling for rows can go here */
+  display: table-row;
+}
+
+.cell {
+  border: 1px solid #ccc;
+  text-align: left;
+  padding: 8px;
+  display: table-cell;
+}
+
+/* Header row style */
+.header-row .cell {
+  font-weight: bold;
+  display: table-cell;
+  background-color: #000;
+  color: white; /* Light gray background for header cells */
+}
+
+/* Responsive design */
+@media screen and (max-width: 600px) {
+  .addButton {
+    font-size: 3.5vw; /* Slightly larger font size for better readability on small screens */
+    padding: 2vh 4vw; /* Adjusted padding for small screens */
+  }
+}
