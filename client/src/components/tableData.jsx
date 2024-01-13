@@ -1,4 +1,4 @@
-export default function TD({ cell, index }) {
+export default function TableData({ cell, index }) {
   return (
     <div className="cell" style={{ border: "1px solid grey" }} key={index}>
       {" "}

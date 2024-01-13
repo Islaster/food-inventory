@@ -1,12 +1,12 @@
 import "./styles.css";
-import TD from "./td";
-import TDInput from "./tdi";
+import TD from "./tableData";
+import TDInput from "./tableDataInput";
 import { useState } from "react";
 import axios from "axios";
 import { MdEdit } from "react-icons/md";
 import { MdDeleteForever } from "react-icons/md";
 
-export default function TR({ item, index }) {
+export default function TableRow({ item, index }) {
   const [edit, setEdit] = useState(false);
   const [rowIndex, setRowIndex] = useState(index);
   const [data, setData] = useState({

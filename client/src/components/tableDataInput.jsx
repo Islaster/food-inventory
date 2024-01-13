@@ -1,4 +1,4 @@
-export default function TDInput({ index, cell, data, setData }) {
+export default function TableDataInput({ index, cell, data, setData }) {
   const keyes = ["idItem", "name", "type", "Quantity", "price", "location"];
   return (
     <div className={`cell ${index}`} key={index}>

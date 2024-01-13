@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./styles.css";
-import TR from "../../components/tr";
+import TableRow from "../../components/tableRow";
 import { Link } from "react-router-dom";
 import { RiAddFill } from "react-icons/ri";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
@@ -22,7 +22,7 @@ export default function Inventory() {
   document.title = `Inventory`;
 
   useEffect(() => {
-    axios("http://localhost:3001/inventory")
+    axios("http://localhost:3001")
       .then((response) => setData(response.data.values))
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
@@ -81,7 +81,7 @@ export default function Inventory() {
           )}
         </div>
         {data.map((item, index) => (
-          <TR item={item} index={index} />
+          <TableRow item={item} index={index} />
         ))}
       </div>
     </div>
