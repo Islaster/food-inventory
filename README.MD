@@ -20,6 +20,8 @@ to get all node_modules
 
 You'll also to download a keyfile.json from your service account on google cloud developer
 
+### Google Sheet API
+
 1. **Google Cloud Console Setup:**
    - go to the [Google Cloud Console](https://console.cloud.google.com/)
    - Create a new project or select an existing one.
@@ -33,6 +35,33 @@ You'll also to download a keyfile.json from your service account on google cloud
 4. **File Placement:**
    - place file in root directory.
    - rename keyfile.json in config/google-sheets.js to your keyfile name
+
+### Google SSO
+
+1. **Google Cloud Console Setup:**
+   - go to the [Google Cloud Console](https://console.cloud.google.com/)
+   - Create a new project or select an existing one.
+2. **Creating Google Consent Screen**
+   - From navigation menu go to API & Services
+   - Go to OAuth consent screen
+   - Follow prompts to set up screen
+3. **Create OAuth Client ID**
+   - From navigation menu go to Credentials
+   - Click "Create credentials" and choose OAuth Client ID
+   - Follow the prompts to set up your credentials.
+4. **Save Client ID**
+
+   - Add client ID to server/.env file under GOOGLE_CLIENT_ID.
+
+   ```
+   GOOGLE_CLIENT_ID=your client id
+   ```
+
+   or
+
+   ```
+   GOOGLE_CLIENT_ID="your client id"
+   ```
 
 ## How To Run
 
@@ -60,3 +89,11 @@ $ run npm start
 ## Usage
 
 localhost:3000 on chrome is the best outlook on the it
+
+## Next Steps
+
+1. **make google sso button bigger**
+2. **Fix filter function to filter date and mixed data properly**
+3. **Add a search bar**
+4. **Add jwt functionality**
+   .
