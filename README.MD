@@ -4,13 +4,15 @@ created to keep track of inventory.
 
 
 ## Installation
-clone repo
+Clone repo
 ```console
 $ git clone https://github.com/Islaster/food-inventory.git
 ```
+Install all dependancies from project
 ```console
 $ npm i
 ```
+t
 
 You'll also to download a keyfile.json from your service account on google cloud developer
 
