@@ -1,5 +1,5 @@
 const { google } = require("googleapis");
-const KEYFILEPATH = "../test-keyfile.json";
+const KEYFILEPATH = "../example-keyfile.json";
 
 const auth = new google.auth.JWT(
     require(KEYFILEPATH).client_email,

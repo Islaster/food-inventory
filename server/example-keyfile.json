@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "gamestore-387619",
+  "private_key_id": "9e865be2be4874c9c957ba6fc3cdf92cfa834365",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCmdmcPjN5bnwNy\nAOpYTUbC5IVyAXeseRpztbL8S317kZeTUvRG2xGVuJChQEKCECzks84iFuEd0s/2\nzplu9IbBQSuv7MIq86mtrOGxzR6/dM/V7IigcMuuTb6bca1vwZYfYVFg1xbZTKWm\nZwLUgFGjMtvDyzOyPrml8pV3gwIHkYrzfIJWVy3wndsc/xI3TXaVsnxJSf2kzqvG\nbW7acFoCGD19s5mY8l1mziVmr4L8wX/Z92XHHCpgkhfrIAar0MbNzt42nhaNDK34\n4tJX0EoYFV2gwisVl6hmqgCOUk5ZbnaEFZad00grMlYAQCgsCX26NXpMXSiTB13t\nEmEFIvpDAgMBAAECggEAB8Mdqyv2cm9HydkhFF0GH7BoSJio6/H5ucuPPRSIFWsE\nlmoX2fX9K+4fUGWetFHsxf1cb1qBxNI/wFKB9RqR7hEL6Hgx1a7nCqI1JAVcmbDo\nwCD3fgPEe6xEZxs16zArv+rZ0Jo3Bor8bnX/O8mABQwqE0c2cela3tIhBiGlxpR/\nh2nqTCNyOSnzRyNvc2ONZfMLrbrKHKu3oyxYQJTbaOzFItPXV67gf4bXUzEuNFkv\nwHwSSl9nb3YLKAnsAzoCuoi/Poq8NLjrFKHAF5EZ4WmiauEDHevSK1JzmqsVvytN\ngh+eZvj/5G12GAdEMZi3dP+5F1JlRuLSwVX+96BHgQKBgQDeu4L7LSn6UgBOFT5T\nFjdhakCIvQv6BQCZ2iWvIjhAOvJSGDmNZVUvhYqvCHHN/czC5NXivsU4cqBpebMs\nQxksRYAYU92Z+89InGokSKhIG4p2SyxjNh2OcwMFtg5SOxyZrw5AyhWOx2bi7fDJ\nYOdoC1pjUmokdYBNRPuNDkkKPQKBgQC/U1SGp1ro2JHJQNL1gq145bYrxqyadG00\n3TQHA4TVm5Klu9hbp7NHesjreazWCmZSQzgQkOjjR/TQHI9cqIw29+7KouvRDXW0\npR0kkREZ5s2ZN8+VB8Z94IAzYRZhH5J53U+rDhhKW/l6p05YsJXvAVqUYDD0mChv\neHHxpn7efwKBgA71BqG5cbU2poCX2pyXxFZNXVIRZ+l9RoIObTNql95wVu9+YvcE\n1Aih7iM87O+JWKPJ3Dci2nmk8PLEUmzpgJpBfI2lrB74Ev5sSpBvNKXK+6xf9fYf\nnzJ+tLhAdou9HnmPkOR27aWt7FHW6rGLSV7qTEKZOTmDjn8h38akK/F9AoGAWWD8\nY8ta1NwXfwUhiD/7+jaV2+18RMuPGNsdqwkhzQhYgcQ3VtoJDqN1qUu2SmehVVzB\nnDuWEFdVLsOo1YiHuEYq788cixTWoAVij+qVKpx//8vq1ZxERhnSyi3Y3pZ5PyT8\nStTS1CoTahEusJAN+xGO1zH4rMtIWIrT8CfvrNECgYAO9m8Du2twI47NiuOj7o5U\nZA08tRJIZYkooHy4AsLfurQTJ/DrZtOXI3WXyrFuniEATmm4w+I95kATIt07zz8R\nXcCJorsvatifCCTigwu7es/zmDy72seVwpjj6KBnEK4S7RxdKkPf12E5ihhceSvg\no4TnbdF9LhgFblJ66uKwBg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "test-622@gamestore-387619.iam.gserviceaccount.com",
+  "client_id": "112071013491953652332",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/test-622%40gamestore-387619.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

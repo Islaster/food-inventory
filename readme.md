@@ -4,8 +4,10 @@ created to keep track of inventory.
 
 
 ## Installation
-    git clone repo
-    '$ npm i' to get all node_modules
+
+    $ git clone repo
+    $ npm i 
+    to get all node_modules
 
 ## How To Run
     in 2 different cmds or terminals run these 2 commands:
@@ -15,6 +17,20 @@ created to keep track of inventory.
         2nd:
            $ cd into client
            $ run npm start
-
+    You'll also to download a keyfile.json from your service account on google cloud developer
+    
+    1. **Google Cloud Console Setup:**
+        - go to the [google cloud console](https://console.cloud.google.com/)
+        - Create a new project or select an existing one.
+        - Enable the Google Sheets API for your project.
+    2. **Creating Credentials:**
+        - In the Google Cloud Console, navigate to the "Credentials" page.
+        - Click "Create credentials" and choose the appropriate type (e.g., OAuth client ID, Service account).
+        - Follow the prompts to set up your credentials.
+    3. **Download Credentials JSON File:**
+        - Once your credentials are created, download the JSON file. This file contains your client ID and secret, which are needed for API access.
+    4 **File Placement:**
+        - place file in root directory.
+        - rename example-keyfile.json in config/google-sheets.js to your keyfile name
 ## Usage
     localhost:3000 on chrome is the best outlook on the it
