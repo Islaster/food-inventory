@@ -22,7 +22,7 @@ You'll also to download a keyfile.json from your service account on google cloud
     - Enable the Google Sheets API for your project.
 2. **Creating Credentials:**
     - In the Google Cloud Console, navigate to the "Credentials" page.
-    - Click "Create credentials" and choose the appropriate type (e.g., OAuth client ID, Service account).
+    - Click "Create credentials" and choose the service account.
     - Follow the prompts to set up your credentials.
 3. **Download Credentials JSON File:**
     - Once your credentials are created, download the JSON file. This file contains your client ID and secret, which are needed API access.
