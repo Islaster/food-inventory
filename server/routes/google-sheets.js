@@ -3,7 +3,7 @@ const router = express.Router();
 const googleCtrl = require("../controllers/google-sheets");
 
 //get google sheet
-router.get("/", googleCtrl.index);
+router.get("/inventory", googleCtrl.index);
 
 //create row in google sheet
 router.post("/create", googleCtrl.create);

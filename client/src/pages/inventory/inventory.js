@@ -22,7 +22,7 @@ export default function Inventory() {
   document.title = `Inventory`;
 
   useEffect(() => {
-    axios("http://localhost:3001")
+    axios("http://localhost:3001/inventory")
       .then((response) => setData(response.data.values))
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
