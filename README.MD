@@ -7,6 +7,7 @@ created to keep track of inventory.
     clone repo
 ## How To Run
 in 2 different cmds or terminals run these 2 commands:
+
 1st:
 ```
 $ cd into server
