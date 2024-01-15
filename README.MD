@@ -32,7 +32,7 @@ You'll also to download a keyfile.json from your service account on google cloud
    - Once your credentials are created, download the JSON file. This file contains your client ID and secret, which are needed API access.
 4. **File Placement:**
    - place file in root directory.
-   - rename example-keyfile.json in config/google-sheets.js to your keyfile name
+   - rename keyfile.json in config/google-sheets.js to your keyfile name
 
 ## How To Run
 
