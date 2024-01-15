@@ -4,24 +4,14 @@ created to keep track of inventory.
 
 
 ## Installation
-    clone repo
-## How To Run
-in 2 different cmds or terminals run these 2 commands:
+clone repo
+```console
+$ git clone https://github.com/Islaster/food-inventory.git
+```
+```console
+$ npm i
+```
 
-1st:
-```
-$ cd into server
-```
-```
-$ run node server
-```
-2nd:
-```
-$ cd into client
-```
-```
-$ run npm start
-```
 You'll also to download a keyfile.json from your service account on google cloud developer
 
 1. **Google Cloud Console Setup:**
@@ -37,5 +27,21 @@ You'll also to download a keyfile.json from your service account on google cloud
 4. **File Placement:**
     - place file in root directory.
     - rename example-keyfile.json in config/google-sheets.js to your keyfile name
+## How To Run
+in 2 different cmds or terminals run these 2 commands:
+1st:
+```console
+$ cd into server
+```
+```console
+$ run node server
+```
+2nd:
+```console
+$ cd into client
+```
+```console
+$ run npm start
+```
 ## Usage
 localhost:3000 on chrome is the best outlook on the it
