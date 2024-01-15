@@ -96,4 +96,3 @@ localhost:3000 on chrome is the best outlook on the it
 2. **Fix filter function to filter date and mixed data properly**
 3. **Add a search bar**
 4. **Add jwt functionality**
-   .
