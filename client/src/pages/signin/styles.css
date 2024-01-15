@@ -1,3 +1,7 @@
+#loginDiv {
+  width: 100%;
+}
+
 .signin-container {
   display: flex;
   justify-content: center;

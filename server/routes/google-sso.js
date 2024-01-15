@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const googleSsoCtrl = require("../controllers/google-sso");
 
-router.get('/auth/google', googleSsoCtrl.auth);
-router.get('auth/google/callback', googleSsoCtrl.callback);
+router.get("signin", googleSsoCtrl.login);
+router.get("signup", googleSsoCtrl.signup);
 
 module.exports = router;
