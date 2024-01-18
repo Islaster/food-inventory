@@ -1,5 +1,5 @@
 const { google } = require("googleapis");
-const KEYFILEPATH = "../keyfile.json";
+const KEYFILEPATH = "../googlesheets-keyfile.json";
 
 const auth = new google.auth.JWT(
   require(KEYFILEPATH).client_email,

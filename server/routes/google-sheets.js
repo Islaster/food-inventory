@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const googleCtrl = require("../controllers/google-sheets");
+const googleCtrl = require("../controllers/googleSheetsControllers");
 
 //get google sheet
 router.get("/inventory", googleCtrl.index);

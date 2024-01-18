@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "./App.css";
 import Inventory from "./pages/inventory/inventory";
@@ -9,6 +9,7 @@ import SignInPage from "./pages/signin/SignInPage";
 
 function App() {
   const [user, setUser] = useState({});
+  const navi = useNavigate();
   useEffect(() => {
     const theUser = localStorage.getItem("user");
 
@@ -25,7 +26,7 @@ function App() {
           element={user?.email ? <Navigate to="/inventory" /> : <LandingPage />}
         />
         <Route path="/signin" element={<SignInPage />} />
-        <Route path="/signup" element={<SignUpPage />} />
+        <Route path="/signup" element={<SignUpPage navi={navi} />} />
         <Route path="/inventory" element={<Inventory />} />
         <Route path="/create" element={<CreatePage />} />
       </Routes>

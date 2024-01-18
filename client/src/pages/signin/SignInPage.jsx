@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "./styles.css"; // Create this CSS file for styling
 import useFetch from "../../hooks/useFetch";
 
 const SignInPage = () => {
+  const navi = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { handleGoogle, loading, error } = useFetch(
@@ -14,6 +16,7 @@ const SignInPage = () => {
     if (window.google) {
       google.accounts.id.initialize({
         client_id: process.env.REACT_APP_GOOGLE_CLIENT_ID,
+        ux_mode: "popup",
         callback: handleGoogle,
       });
 
@@ -23,9 +26,7 @@ const SignInPage = () => {
         size: "large",
         text: "signin_with",
         shape: "pill",
-        width: "500.043",
       });
-
       // google.accounts.id.prompt()
     }
   }, [handleGoogle]);
@@ -36,30 +37,41 @@ const SignInPage = () => {
   };
   return (
     <div className="signin-container">
-      <div className="signin-form">
-        <h1>Sign In</h1>
-        {loading ? <div>Loading....</div> : <div id="loginDiv"></div>}
-        <div className="divider">
-          <span>or</span>
+      {}
+      <form action="">
+        <div className="signin-form">
+          <h1>Sign In</h1>
+          {loading ? (
+            <div>Loading....</div>
+          ) : (
+            <>
+              <div id="loginDiv"></div>
+            </>
+          )}
+          <div className="divider">
+            <span>or</span>
+          </div>
+
+          <input
+            type="email"
+            placeholder="Email Address"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            autoComplete="username"
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            autoComplete="current-password"
+          />
+
+          <button className="signin-btn" type="submit" onClick={handleSubmit}>
+            Sign In
+          </button>
         </div>
-
-        <input
-          type="email"
-          placeholder="Email Address"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-
-        <button className="signin-btn" onClick={handleSubmit}>
-          Sign In
-        </button>
-      </div>
+      </form>
     </div>
   );
 };

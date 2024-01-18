@@ -4,6 +4,11 @@ module.exports = {
 };
 const { OAuth2Client } = require("google-auth-library");
 const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
+const jwt = require("jsonwebtoken");
+const firebase = require("../database/firestore");
+const db = firebase.firestore();
+const userRef = db.collection("users");
+const DB = [];
 
 async function login() {
   try {
@@ -47,7 +52,6 @@ async function login() {
 
 async function signup(req, res) {
   try {
-    console.log({ verified: verifyGoogleToken(req.body.credential) });
     if (req.body.credential) {
       const verificationResponse = await verifyGoogleToken(req.body.credential);
 
@@ -68,15 +72,18 @@ async function signup(req, res) {
           lastName: profile?.family_name,
           picture: profile?.picture,
           email: profile?.email,
-          token: jwt.sign({ email: profile?.email }, "myScret", {
-            expiresIn: "1d",
+          token: jwt.sign({ email: profile?.email }, process.env.TOKEN_SECRET, {
+            expiresIn: "24h",
           }),
         },
       });
     }
+    console.log("user created");
   } catch (error) {
+    console.error(error); // For server-side logging
     res.status(500).json({
-      message: "An error occured. Registration failed.",
+      message: "An error occurred. Registration failed.",
+      error: error.message, // Sending back the specific error message
     });
   }
 }

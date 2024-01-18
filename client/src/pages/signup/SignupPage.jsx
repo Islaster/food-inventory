@@ -1,21 +1,27 @@
 import React, { useState, useEffect } from "react";
 import "./styles.css"; // Ensure this file is in the same directory
 import useFetch from "../../hooks/useFetch";
+import axios from "axios";
 
-const SignUpPage = () => {
+const SignUpPage = ({ navi }) => {
   const { handleGoogle, loading, error } = useFetch(
     "http://localhost:3001/signup"
   );
-  const [email, setEmail] = useState("");
+  const [signupData, setSignupData] = useState({
+    fullName: "",
+    email: "",
+    password: "",
+    userName: "",
+  });
   const [confirmEmail, setConfirmEmail] = useState("");
-  const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const isEmailMatch = email === confirmEmail;
-  const isPasswordMatch = password === confirmPassword;
-  const isFormValid = emailRegex.test(email) && isEmailMatch && isPasswordMatch;
+  const isEmailMatch = signupData.email === confirmEmail;
+  const isPasswordMatch = signupData.password === confirmPassword;
+  const isFormValid =
+    emailRegex.test(signupData.email) && isEmailMatch && isPasswordMatch;
 
   useEffect(() => {
     /* global google */
@@ -28,7 +34,7 @@ const SignUpPage = () => {
       google.accounts.id.renderButton(document.getElementById("signUpDiv"), {
         // type: "standard",
         theme: "filled_white",
-        // size: "small",
+        size: "large",
         text: "continue_with",
         shape: "pill",
       });
@@ -41,20 +47,25 @@ const SignUpPage = () => {
     setSubmitted(false); // Hide the error popup
     setErrorMessage(""); // Clear the error message
   };
+
   const handleSubmit = (e) => {
+    console.log(signupData);
     e.preventDefault();
     setSubmitted(true);
 
     if (!isFormValid) {
       let message = "Please check the following: ";
-      if (!emailRegex.test(email)) message += "Email format is incorrect. ";
+      if (!emailRegex.test(signupData.email))
+        message += "Email format is incorrect. ";
       if (!isEmailMatch) message += "Emails do not match. ";
       if (!isPasswordMatch) message += "Passwords do not match. ";
       setErrorMessage(message);
     } else {
       setErrorMessage("");
-      // Here, you can add logic to handle the valid form submission, like an API call.
+      //login functionality
+      axios.post("http://localhost:3001/user/create", signupData);
     }
+    navi("/inventory");
   };
   return (
     <div className="signup-container">
@@ -79,10 +90,28 @@ const SignUpPage = () => {
         </div>
         <form action="">
           <input
+            name="fullName"
+            type="text"
+            placeholder="Full Name (e.q. John Doe)"
+            value={signupData.fullName}
+            onChange={(evt) =>
+              setSignupData({
+                ...signupData,
+                [evt.target.name]: evt.target.value,
+              })
+            }
+          />
+          <input
+            name="email"
             type="email"
             placeholder="Email Address"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={signupData.email}
+            onChange={(evt) =>
+              setSignupData({
+                ...signupData,
+                [evt.target.name]: evt.target.value,
+              })
+            }
           />
           <input
             type="email"
@@ -95,11 +124,19 @@ const SignUpPage = () => {
           />
           <input
             type="password"
+            name="password"
             placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            autoComplete="new-password"
+            value={signupData.password}
+            onChange={(evt) =>
+              setSignupData({
+                ...signupData,
+                [evt.target.name]: evt.target.value,
+              })
+            }
           />
           <input
+            autoComplete="new-password"
             type="password"
             placeholder="Confirm Password"
             value={confirmPassword}
