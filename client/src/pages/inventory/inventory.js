@@ -5,9 +5,11 @@ import TableRow from "../../components/tableRow";
 import { Link } from "react-router-dom";
 import { RiAddFill } from "react-icons/ri";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+import SearchBar from "../../components/searchbar";
 
 export default function Inventory() {
   const [data, setData] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
   const headers = [
     "Product #",
     "Product name",
@@ -23,9 +25,24 @@ export default function Inventory() {
 
   useEffect(() => {
     axios("http://localhost:3001/inventory")
-      .then((response) => setData(response.data.values))
+      .then((response) => {
+        setData(response.data.values);
+        console.log(response.data);
+      })
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
+
+  const handleSearchChange = (searchTerm) => {
+    setSearchTerm(searchTerm);
+  };
+
+  const filteredData = searchTerm
+    ? data.filter((row) =>
+        row.some((cell) =>
+          cell.toString().toLowerCase().includes(searchTerm.toLowerCase())
+        )
+      )
+    : data;
 
   const sortItems = (columnIndex, direction) => {
     const sortedData = [...data].sort((a, b) => {
@@ -81,7 +98,11 @@ export default function Inventory() {
           Add <RiAddFill />
         </button>
       </Link>
-      <div className="table">
+      <SearchBar
+        placeholder="Search Inventory..."
+        onSearchChange={handleSearchChange}
+      />
+      <div className="table" key={"table 1"}>
         <div className="header-row row">
           {headers.map((header, index) =>
             index > headers.length - 3 ? (
@@ -97,7 +118,7 @@ export default function Inventory() {
             )
           )}
         </div>
-        {data.map((item, index) => (
+        {filteredData.map((item, index) => (
           <TableRow key={`row-${index}`} item={item} index={index} />
         ))}
       </div>

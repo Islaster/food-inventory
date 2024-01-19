@@ -6,9 +6,28 @@ body {
   position: relative;
 }
 
+.searchBar {
+  margin: 20px auto; /* Centered with margin */
+  display: block; /* Ensures it takes its own line */
+  width: 90%; /* Relative width to the parent container */
+  max-width: 500px; /* Maximum width */
+  padding: 10px; /* Comfortable padding inside the search bar */
+  border: 1px solid #ccc; /* Subtle border */
+  border-radius: 5px; /* Slightly rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+  font-size: 1em; /* Adequate font size */
+  font-family: Arial, sans-serif; /* Consistent with the rest of the interface */
+}
+
+.searchBar:focus {
+  outline: none; /* Removes the default focus outline */
+  border-color: #28a745; /* Highlights the border in green when focused */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Slightly darker shadow on focus */
+}
+
 .addButton {
   position: absolute;
-  top: -8.5vh; /* Half of the top margin of the table */
+  top: -12.5vh; /* Half of the top margin of the table */
   left: 4vw; /* All the way to the left */
   padding: 0.5vh 1vw; /* Responsive padding */
   background-color: #28a745; /* Professional green shade */
@@ -68,5 +87,11 @@ body {
   .addButton {
     font-size: 3.5vw; /* Slightly larger font size for better readability on small screens */
     padding: 2vh 4vw; /* Adjusted padding for small screens */
+  }
+
+  .searchBar {
+    width: 80%; /* Takes more space in smaller screens */
+    padding: 15px; /* Larger padding for better touch interaction */
+    font-size: 1.2em; /* Larger font size for readability */
   }
 }
