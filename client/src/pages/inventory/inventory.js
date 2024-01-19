@@ -32,19 +32,26 @@ export default function Inventory() {
       let itemA = a[columnIndex];
       let itemB = b[columnIndex];
 
-      // Specific logic for the column with floating ints (assuming it's index 3)
-      if (columnIndex === 3) {
-        itemA = parseFloat(itemA.replace(/[^0-9.-]/g, ""));
-        itemB = parseFloat(itemB.replace(/[^0-9.-]/g, ""));
+      // Custom date parsing and sorting for the 7th column (index 6)
+      if (columnIndex === 6) {
+        itemA = parseDate(itemA);
+        itemB = parseDate(itemB);
+      } else if (columnIndex === 4) {
+        // Logic for 5th column with currency values
+        itemA = parseInt(itemA.replace(/[$.]/g, ""), 10);
+        itemB = parseInt(itemB.replace(/[$.]/g, ""), 10);
       } else if (!isNaN(itemA) && !isNaN(itemB)) {
-        // General numeric sorting for other columns
+        // Numeric sorting for other numeric columns
         itemA = parseFloat(itemA);
         itemB = parseFloat(itemB);
-      } else {
+      } else if (typeof itemA === "string" && typeof itemB === "string") {
         // String sorting for non-numeric columns
-        return itemA.localeCompare(itemB);
+        return direction === "ascending"
+          ? itemA.localeCompare(itemB)
+          : itemB.localeCompare(itemA);
       }
 
+      // Sorting logic
       if (itemA < itemB) {
         return direction === "ascending" ? -1 : 1;
       }
@@ -56,6 +63,16 @@ export default function Inventory() {
 
     setData(sortedData);
   };
+
+  // Custom function to parse dates in mm/dd/yyyy format
+  function parseDate(dateString) {
+    const parts = dateString.split("/");
+    const day = parseInt(parts[1], 10);
+    const month = parseInt(parts[0], 10) - 1; // JS months are 0-indexed
+    const year = parseInt(parts[2], 10);
+
+    return new Date(year, month, day);
+  }
 
   return (
     <div>
@@ -81,7 +98,7 @@ export default function Inventory() {
           )}
         </div>
         {data.map((item, index) => (
-          <TableRow item={item} index={index} />
+          <TableRow key={`row-${index}`} item={item} index={index} />
         ))}
       </div>
     </div>

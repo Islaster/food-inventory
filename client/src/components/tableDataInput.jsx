@@ -1,7 +1,7 @@
 export default function TableDataInput({ index, cell, data, setData }) {
   const keyes = ["idItem", "name", "type", "Quantity", "price", "location"];
   return (
-    <div className={`cell ${index}`} key={index}>
+    <div className={`cell ${index}`}>
       <input
         type={typeof cell === "string" ? "text" : "number"}
         name={keyes[index] === "item #" ? "idItem" : keyes[index]}
