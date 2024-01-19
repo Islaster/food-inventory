@@ -93,6 +93,7 @@ localhost:3000 on chrome is the best outlook on the it
 ## Next Steps
 
 1. **make google sso button bigger**
-2. **Fix filter function to filter date and mixed data properly**
-3. **Add a search bar**
-4. **Add jwt functionality**
+2. **Fix CSS for search bar and add button**
+3. **link google account with jwt account**
+4. **Add more SSOs**
+5. **Add safety nets for large traffic flow**
